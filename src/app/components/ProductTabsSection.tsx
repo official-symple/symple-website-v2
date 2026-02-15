@@ -105,7 +105,11 @@ export function ProductTabsSection() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="https://apps.apple.com/kr/app/%EC%98%A4%EB%A6%AC%EC%9D%98-%EA%BF%88/id6746451155" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://apps.apple.com/kr/app/%EC%98%A4%EB%A6%AC%EC%9D%98-%EA%BF%88/id6746451155"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Button className="bg-[#00BF7F] hover:bg-[#00a66d] shadow-lg shadow-[#00BF7F]/20">
                       Download Duck's Dream
                     </Button>
@@ -121,8 +125,8 @@ export function ProductTabsSection() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
                   >
-                    <img 
-                      src={imgDucksDream1} 
+                    <img
+                      src={imgDucksDream1}
                       alt="Duck's Dream App Screen 1"
                       className="w-full h-auto object-contain"
                     />
@@ -133,8 +137,8 @@ export function ProductTabsSection() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
                   >
-                    <img 
-                      src={imgDucksDream2} 
+                    <img
+                      src={imgDucksDream2}
                       alt="Duck's Dream App Screen 2"
                       className="w-full h-auto object-contain"
                     />
@@ -186,9 +190,15 @@ export function ProductTabsSection() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button className="bg-[#FA5454] hover:bg-[#e13f3f] shadow-lg shadow-[#FA5454]/20">
-                    Coming Soon
-                  </Button>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSckDJbucjBnFVnC5rqkf12UMknoeCOK0tYfzKP6wUWCpB1cSw/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-[#FA5454] hover:bg-[#e13f3f] shadow-lg shadow-[#FA5454]/20 text-white">
+                      Pre-registration
+                    </Button>
+                  </a>
                 </div>
               </div>
 
@@ -200,8 +210,8 @@ export function ProductTabsSection() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
                   >
-                    <img 
-                      src={imgKkebi1} 
+                    <img
+                      src={imgKkebi1}
                       alt="KKEBI App Screen 1"
                       className="w-full h-auto object-contain"
                     />
@@ -212,8 +222,8 @@ export function ProductTabsSection() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
                   >
-                    <img 
-                      src={imgKkebi2} 
+                    <img
+                      src={imgKkebi2}
                       alt="KKEBI App Screen 2"
                       className="w-full h-auto object-contain"
                     />
