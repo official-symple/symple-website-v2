@@ -21,4 +21,31 @@ export default defineConfig({
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes('node_modules')) {
+            return;
+          }
+
+          if (id.includes('/motion/')) {
+            return 'motion-vendor';
+          }
+
+          if (id.includes('/recharts/')) {
+            return 'recharts-vendor';
+          }
+
+          if (id.includes('/d3-')) {
+            return 'd3-vendor';
+          }
+
+          if (id.includes('/lucide-react/')) {
+            return 'icons-vendor';
+          }
+        },
+      },
+    },
+  },
 })
