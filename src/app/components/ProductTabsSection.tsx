@@ -13,6 +13,9 @@ export function ProductTabsSection() {
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   const [activeTab, setActiveTab] = useState<'ducks-dream' | 'kkebi'>('ducks-dream');
 
+  const ctaBase =
+    "w-full sm:w-auto justify-center px-6 py-3 text-base font-semibold rounded-xl shadow-lg";
+
   return (
     <section id="solutions" ref={ref} className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -73,7 +76,38 @@ export function ProductTabsSection() {
               transition={{ duration: 0.3 }}
               className="grid md:grid-cols-2 gap-12 items-center"
             >
-              <div className="space-y-8">
+              {/* ✅ Images FIRST on mobile */}
+              <div className="relative order-1 md:order-2">
+                <div className="grid grid-cols-2 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
+                  >
+                    <img
+                      src={imgDucksDream1}
+                      alt="Duck's Dream App Screen 1"
+                      className="w-full h-auto object-contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
+                  >
+                    <img
+                      src={imgDucksDream2}
+                      alt="Duck's Dream App Screen 2"
+                      className="w-full h-auto object-contain"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* ✅ Text/CTA SECOND on mobile */}
+              <div className="space-y-8 order-2 md:order-1">
                 <div>
                   <div className="inline-block px-4 py-2 bg-[#00BF7F]/10 border border-[#00BF7F]/20 rounded-full text-[#00BF7F] text-sm mb-4">
                     Gamified CBT Mental Wellness Companion
@@ -104,45 +138,18 @@ export function ProductTabsSection() {
                   />
                 </div>
 
+                {/* ✅ CTA size unified on mobile */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
+                    className="w-full sm:w-auto"
                     href="https://apps.apple.com/kr/app/%EC%98%A4%EB%A6%AC%EC%9D%98-%EA%BF%88/id6746451155"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button className="bg-[#00BF7F] hover:bg-[#00a66d] shadow-lg shadow-[#00BF7F]/20">
+                    <Button className={`${ctaBase} bg-[#00BF7F] hover:bg-[#00a66d] shadow-[#00BF7F]/20`}>
                       Download Duck's Dream
                     </Button>
                   </a>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="grid grid-cols-2 gap-6">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
-                  >
-                    <img
-                      src={imgDucksDream1}
-                      alt="Duck's Dream App Screen 1"
-                      className="w-full h-auto object-contain"
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
-                  >
-                    <img
-                      src={imgDucksDream2}
-                      alt="Duck's Dream App Screen 2"
-                      className="w-full h-auto object-contain"
-                    />
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -158,7 +165,38 @@ export function ProductTabsSection() {
               transition={{ duration: 0.3 }}
               className="grid md:grid-cols-2 gap-12 items-center"
             >
-              <div className="space-y-8">
+              {/* ✅ Images FIRST on mobile */}
+              <div className="relative order-1 md:order-2">
+                <div className="grid grid-cols-2 gap-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
+                  >
+                    <img
+                      src={imgKkebi1}
+                      alt="KKEBI App Screen 1"
+                      className="w-full h-auto object-contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
+                  >
+                    <img
+                      src={imgKkebi2}
+                      alt="KKEBI App Screen 2"
+                      className="w-full h-auto object-contain"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+
+              {/* ✅ Text/CTA SECOND on mobile */}
+              <div className="space-y-8 order-2 md:order-1">
                 <div>
                   <div className="inline-block px-4 py-2 bg-[#FA5454]/10 border border-[#FA5454]/20 rounded-full text-[#FA5454] text-sm mb-4">
                     Video-Based Emotional Care Platform
@@ -189,45 +227,18 @@ export function ProductTabsSection() {
                   />
                 </div>
 
+                {/* ✅ CTA size unified on mobile */}
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
+                    className="w-full sm:w-auto"
                     href="https://docs.google.com/forms/d/e/1FAIpQLSckDJbucjBnFVnC5rqkf12UMknoeCOK0tYfzKP6wUWCpB1cSw/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button className="bg-[#FA5454] hover:bg-[#e13f3f] shadow-lg shadow-[#FA5454]/20 text-white">
+                    <Button className={`${ctaBase} bg-[#FA5454] hover:bg-[#e13f3f] shadow-[#FA5454]/20 text-white`}>
                       Pre-registration
                     </Button>
                   </a>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="grid grid-cols-2 gap-6">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
-                  >
-                    <img
-                      src={imgKkebi1}
-                      alt="KKEBI App Screen 1"
-                      className="w-full h-auto object-contain"
-                    />
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-200"
-                  >
-                    <img
-                      src={imgKkebi2}
-                      alt="KKEBI App Screen 2"
-                      className="w-full h-auto object-contain"
-                    />
-                  </motion.div>
                 </div>
               </div>
             </motion.div>
